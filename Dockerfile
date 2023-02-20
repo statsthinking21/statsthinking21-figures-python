@@ -35,9 +35,14 @@ WORKDIR /R-4.1.3
 RUN ./configure --enable-R-shlib=yes && make && make install
 RUN rm -rf /R-4.1.3*
 
+RUN pip install \
+    rpy2
+RUN pip install \
+    jupyterlab
+
 # environment setup
 ENV C_INCLUDE_PATH /usr/local/lib/R/include
 ENV LD_LIBRARY_PATH /usr/local/lib/R/lib
 
 WORKDIR /analysis
-CMD ["/bin/bash"]
+# CMD ["jupyter lab"]
