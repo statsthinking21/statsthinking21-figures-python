@@ -1,4 +1,5 @@
 DOCKER_USERNAME = poldrack
+NB_NAME = datascience-notebook
 
 build-python-book:
 	-rm -rf src/_build
@@ -27,12 +28,14 @@ docker-login: guard-DOCKER_USERNAME guard-DOCKER_PASSWORD
 	docker login --username=$(DOCKER_USERNAME) --password=$(DOCKER_PASSWORD)
 
 docker-upload: guard-DOCKER_USERNAME
-	docker push $(DOCKER_USERNAME)/statsthinking21-nb
+	docker push $(DOCKER_USERNAME)/${NB_NAME}
 
 docker-build: guard-DOCKER_USERNAME
-	sudo docker build -t $(DOCKER_USERNAME)/statsthinking21-nb .
+	sudo docker build -t $(DOCKER_USERNAME)/${NB_NAME} .
 
 # add -p 8888:8888 for jupyter
 shell: guard-DOCKER_USERNAME
-	sudo docker run -it --entrypoint=bash -v $(current_dir):/analysis $(DOCKER_USERNAME)/statsthinking21-nb 
+	sudo docker run -it -p 8888:8888  -e GRANT_SUDO=yes --entrypoint=bash -v $(current_dir):/home/jovyan/work/nb:rw $(DOCKER_USERNAME)/${NB_NAME}
 
+jupyter: 
+	sudo docker-compose up
