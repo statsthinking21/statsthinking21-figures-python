@@ -1,0 +1,14 @@
+jupyter:
+  image: poldrack/datascience-notebook
+  container_name: jupyterlab
+  user: "1002"
+  ports:
+    - 8888:8888
+  environment:
+    GRANT_SUDO: "yes"
+    JUPYTER_ENABLE_LAB: "yes"
+    JUPYTER_TOKEN: "docker"
+  volumes:
+    - ./:/home/jovyan/work/nb:rw
+
+
