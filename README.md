@@ -1,4 +1,4 @@
-This book contains Python code to create versions of each of the figures presented in *Statistical Thinking: Analyzing Data in an Uncertain World*, by Russell Poldrack, published by Princeton University Press.
+This book contains Python code to create versions of each of the figures presented in [*Statistical Thinking: Analyzing Data in an Uncertain World*](https://press.princeton.edu/books/hardcover/9780691250939/statistical-thinking), by Russell Poldrack, published by Princeton University Press.
 
 
 Copyright 2023 Russell Poldrack
