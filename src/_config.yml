@@ -1,0 +1,5 @@
+# In _config.yml
+title: "Code and figures for Statistical Thinking: Analyzing Data in an Uncertain World"
+author: Russell Poldrack
+execute:
+  execute_notebooks: force

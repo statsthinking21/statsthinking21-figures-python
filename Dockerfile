@@ -2,20 +2,29 @@
 
 FROM jupyter/datascience-notebook:latest
 
-COPY install_R_packages.R /tmp/install_R_packages.R
-RUN Rscript /tmp/install_R_packages.R
+
+USER root
+RUN apt-get update && apt-get install -y graphviz cmake
+# fix user to mount shared volume and to be able to sudo
+RUN usermod -u 1002 jovyan
+RUN usermod -aG sudo jovyan
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+USER jovyan
 
 RUN pip install \
     sidetable \
     geopandas \
-    pingouin
+    pingouin \
+    semopy \
+    yellowbrick \
+    jupyter-book \
+    graphviz
 
-USER root
+RUN echo "Installing R packages"
 
-RUN usermod -u 1002 jovyan
-
-USER jovyan
+COPY install_R_packages.R /tmp/install_R_packages.R
+RUN Rscript /tmp/install_R_packages.R
 
 RUN mkdir /home/jovyan/work/nb
-
 

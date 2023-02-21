@@ -35,7 +35,7 @@ docker-build: guard-DOCKER_USERNAME
 
 # add -p 8888:8888 for jupyter
 shell: guard-DOCKER_USERNAME
-	sudo docker run -it -p 8888:8888  -e GRANT_SUDO=yes --entrypoint=bash -v $(current_dir):/home/jovyan/work/nb:rw $(DOCKER_USERNAME)/${NB_NAME}
+	sudo docker run -it -e GRANT_SUDO=yes --entrypoint=bash -v $(current_dir):/home/jovyan/work/nb:rw $(DOCKER_USERNAME)/${NB_NAME}
 
 jupyter: 
 	sudo docker-compose up

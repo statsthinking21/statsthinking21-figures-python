@@ -1,0 +1,23 @@
+# In _toc.yml
+format: jb-book
+root: intro
+chapters:
+- file: 01-Intro.ipynb
+- file: 02-Data.ipynb
+- file: 03-SummarizingData.ipynb
+- file: 04-VisualizingData.ipynb
+- file: 05-FittingModels.ipynb
+- file: 06-Probability.ipynb
+- file: 07-Sampling.ipynb
+- file: 08-Resampling.ipynb
+- file: 09-HypothesisTesting.ipynb
+- file: 10-ConfIntEffectSize.ipynb
+- file: 11-BayesianStatistics.ipynb
+- file: 12-CategoricalRelationships.ipynb
+- file: 13-ContinuousRelationships.ipynb
+- file: 14-GeneralLinearModel.ipynb
+- file: 15-ComparingMeans.ipynb
+- file: 16-MultivariateStats.ipynb
+- file: 17-PracticalExamples.ipynb
+- file: 18-DoingReproducibleResearch.ipynb
+
