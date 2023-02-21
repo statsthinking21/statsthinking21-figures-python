@@ -4,7 +4,7 @@ packages = c('cowplot', 'NHANES', 'BayesFactor', 'fivethirtyeight',
              'ggbeeswarm', 'pander', 'devtools', 'janitor',
              'pwr', 'kableExtra', 'sfsmisc', 'DiagrammeR', 
              'ggdendro', 'gplots', 'pdist', 'factoextra',
-             'mclust', 'MuMIn', 'influence.ME', 'ggExtra')
+             'mapproj', 'mclust', 'MuMIn', 'influence.ME', 'ggExtra')
 
 for (package in packages){
     install.packages(package, repos='http://cran.us.r-project.org')
